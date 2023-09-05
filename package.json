@@ -1,0 +1,17 @@
+{
+  "name": "pokemon-app",
+  "version": "1.0.0",
+  "source": "src/index.html",
+  "repository": "https://github.com/caedes/pokemon-app.git",
+  "author": "Romain Laurent <romain.laurent@cdiscount.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "parcel": "^2.9.3"
+  },
+  "scripts": {
+    "start": "parcel -p 3000",
+    "build": "parcel build"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead"
+}
