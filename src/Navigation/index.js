@@ -11,8 +11,9 @@ export class Navigation {
     fetch("https://api-pokemon-fr.vercel.app/api/v1/gen")
       .then((response) => response.json())
       .then((generations) =>
-        generations.forEach(({ generation }) => {
+        generations.forEach(({ generation }, i) => {
           const listItem = document.createElement("li");
+          if (i === 0) listItem.classList.add("current");
           list.append(listItem);
 
           const link = document.createElement("a");
