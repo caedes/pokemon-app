@@ -1,6 +1,6 @@
 export class Navigation {
-  constructor(container) {
-    this.container = container;
+  constructor(app) {
+    this.app = app;
   }
 
   render() {

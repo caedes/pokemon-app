@@ -5,11 +5,19 @@ import { PokemonSlug } from "../PokemonSlug";
 export class App {
   constructor(container) {
     this.container = container;
+    this.generation = null;
   }
 
   render() {
-    new Navigation(this.container).render();
-    new PokemonList(this.container).render();
-    new PokemonSlug(this.container).render();
+    this.container.textContent = "";
+
+    new Navigation(this).render();
+    new PokemonList(this).render();
+    new PokemonSlug(this).render();
+  }
+
+  setGeneration(nextGeneration) {
+    this.generation = nextGeneration;
+    this.render();
   }
 }

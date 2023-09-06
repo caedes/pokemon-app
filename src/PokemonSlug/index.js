@@ -1,6 +1,6 @@
 export class PokemonSlug {
-  constructor(container) {
-    this.container = container;
+  constructor(app) {
+    this.app = app;
   }
 
   render() {
@@ -9,6 +9,6 @@ export class PokemonSlug {
     title.textContent = "Bulbizarre";
     article.append(title);
 
-    this.container.append(article);
+    this.app.container.append(article);
   }
 }
