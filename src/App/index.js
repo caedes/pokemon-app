@@ -6,6 +6,7 @@ export class App {
   constructor(container) {
     this.container = container;
     this.generation = 1;
+    this.pokemon = 1;
   }
 
   render() {
@@ -18,6 +19,11 @@ export class App {
 
   setGeneration(nextGeneration) {
     this.generation = nextGeneration;
+    this.render();
+  }
+
+  setPokemon(nextPokemon) {
+    this.pokemon = nextPokemon;
     this.render();
   }
 }

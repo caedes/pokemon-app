@@ -6,7 +6,7 @@ export class PokemonSlug {
   render() {
     const article = document.createElement("article");
     const title = document.createElement("h2");
-    title.textContent = "Bulbizarre";
+    title.textContent = `Bulbizarre #${this.app.pokemon}`;
     article.append(title);
 
     this.app.container.append(article);

@@ -15,6 +15,12 @@ export class PokemonList {
         link.setAttribute("href", "#");
         link.textContent = `${name.fr} #${pokedexId}`;
 
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+
+          this.app.setPokemon(pokedexId);
+        });
+
         listItem.append(link);
         menu.append(listItem);
       });
