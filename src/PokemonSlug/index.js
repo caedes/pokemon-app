@@ -1,3 +1,5 @@
+import { PokemonHttpClient } from "../PokemonHttpClient";
+import { Type } from "../Type";
 import "./styles.css";
 
 export class PokemonSlug {
@@ -6,11 +8,24 @@ export class PokemonSlug {
   }
 
   render() {
-    const article = document.createElement("article");
-    const title = document.createElement("h2");
-    title.textContent = `Bulbizarre #${this.app.pokemon}`;
-    article.append(title);
+    PokemonHttpClient.fetch(`/pokemon/${this.app.pokemon}`).then(
+      ({ name, sprites, types }) => {
+        const article = document.createElement("article");
+        const title = document.createElement("h2");
+        title.textContent = `${name.fr} #${this.app.pokemon}`;
+        article.append(title);
 
-    this.app.container.append(article);
+        const image = document.createElement("img");
+        image.setAttribute("src", sprites.regular);
+        image.setAttribute("alt", name.fr);
+        article.append(image);
+
+        types.forEach(({ name, image }) => {
+          new Type(name, image).render(article);
+        });
+
+        this.app.container.append(article);
+      }
+    );
   }
 }

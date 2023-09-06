@@ -4,6 +4,7 @@ article {
   border-radius: 10px;
   border: 1px solid black;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.75);
+  color: var(--light-white);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -16,10 +17,4 @@ article {
 article img {
   height: 100%;
   width: 100%;
-}
-
-article img.type {
-  height: 1em;
-  margin: 0 0.2em 0 1em;
-  width: 1em;
 }
