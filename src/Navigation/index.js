@@ -1,5 +1,7 @@
 import { PokemonHttpClient } from "../PokemonHttpClient";
 
+import "./styles.css";
+
 export class Navigation {
   constructor(app) {
     this.app = app;

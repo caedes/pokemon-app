@@ -30,4 +30,5 @@ A class should be in its own folder and wrritten in an index.js file. e.g.
 /src
     /App
         index.js
+        styles.css
 ```

@@ -1,3 +1,5 @@
+import "./styles.css";
+
 export class PokemonSlug {
   constructor(app) {
     this.app = app;

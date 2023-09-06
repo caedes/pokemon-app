@@ -2,6 +2,8 @@ import { Navigation } from "../Navigation";
 import { PokemonList } from "../PokemonList";
 import { PokemonSlug } from "../PokemonSlug";
 
+import "./styles.css";
+
 export class App {
   constructor(container) {
     this.container = container;
