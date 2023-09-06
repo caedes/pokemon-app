@@ -5,7 +5,7 @@ import { PokemonSlug } from "../PokemonSlug";
 export class App {
   constructor(container) {
     this.container = container;
-    this.generation = null;
+    this.generation = 1;
   }
 
   render() {

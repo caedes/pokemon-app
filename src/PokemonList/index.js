@@ -1,3 +1,5 @@
+import { PokemonHttpClient } from "../PokemonHttpClient";
+
 export class PokemonList {
   constructor(app) {
     this.app = app;
@@ -6,10 +8,18 @@ export class PokemonList {
   render() {
     const menu = document.createElement("menu");
 
-    const listItem = document.createElement("li");
-    listItem.textContent = "Pokemon #1";
-    menu.append(listItem);
+    PokemonHttpClient.fetch(`/gen/${this.app.generation}`).then((pokemons) => {
+      pokemons.forEach(({ name, pokedexId }) => {
+        const listItem = document.createElement("li");
+        const link = document.createElement("a");
+        link.setAttribute("href", "#");
+        link.textContent = `${name.fr} #${pokedexId}`;
 
-    this.container.append(menu);
+        listItem.append(link);
+        menu.append(listItem);
+      });
+    });
+
+    this.app.container.append(menu);
   }
 }
