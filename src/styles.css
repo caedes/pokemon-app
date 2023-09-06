@@ -1,4 +1,60 @@
+:root {
+  --blue: #49a4f3;
+  --light-white: #d9dde1;
+  --menu-width: 250px;
+}
+
 html,
 body {
   font-family: sans-serif;
+  margin: 0;
+  height: 100%;
+}
+
+h1 {
+  --padding: 20px;
+  background-color: #2d3a4d;
+  color: var(--light-white);
+  margin: 0;
+  width: calc(var(--menu-width) - 2 * var(--padding));
+  font-size: 1rem;
+  font-weight: normal;
+  padding: var(--padding);
+}
+
+main {
+  display: flex;
+}
+
+nav {
+  background-color: #39475e;
+  color: #49a3f3;
+  width: var(--menu-width);
+  margin: 0;
+  padding: 20px 0 0;
+  min-height: 100vh;
+}
+
+nav ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav a {
+  padding: 15px 0 15px 15px;
+  color: var(--light-white);
+  text-decoration: none;
+  display: block;
+}
+
+nav li.current a {
+  background-color: #2d394d;
+  border-right: 5px solid #49a4f3;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: white;
+  border-right: 5px solid #7086a9;
 }
