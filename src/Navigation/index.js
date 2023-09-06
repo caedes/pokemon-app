@@ -13,16 +13,27 @@ export class Navigation {
       .then((generations) =>
         generations.forEach(({ generation }, i) => {
           const listItem = document.createElement("li");
-          if (i === 0) listItem.classList.add("current");
+          if (
+            generation === this.app.generation ||
+            (this.app.generation === null && i === 0)
+          ) {
+            listItem.classList.add("current");
+          }
           list.append(listItem);
 
           const link = document.createElement("a");
           link.setAttribute("href", "#");
           link.textContent = `Génération n°${generation}`;
           listItem.append(link);
+
+          link.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            this.app.setGeneration(generation);
+          });
         })
       );
 
-    this.container.append(navigation);
+    this.app.container.append(navigation);
   }
 }
